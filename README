@@ -1,1 +1,2 @@
 摘自网络的hadoop代码
+UseDistributedCacheBySymbolicLink和DistributedCache.addCacheFile一般是结合起来用的

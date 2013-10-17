@@ -19,7 +19,7 @@ public class WordCount
 {
     public static void UseDistributedCacheBySymbolicLink() throws Exception
     {
-        FileReader reader = new FileReader("god.txt");
+        FileReader reader = new FileReader("od.txt");
         BufferedReader br = new BufferedReader(reader);
         String s1 = null;
         while ((s1 = br.readLine()) != null)
@@ -94,12 +94,12 @@ public class WordCount
         FileOutputFormat.setOutputPath(conf, new Path(args[1]));
 
         DistributedCache.createSymlink(conf);
-        String path = "/home/casa/input";
+        String path = "/home/casa/input/wiki/wikistats/part-00098";
         Path filePath = new Path(path);
-        String uriWithLink = filePath.toUri().toString() + "#" + "god.txt";
-        System.out.println("log");
+        String uriWithLink = filePath.toUri().toString() + "#" + "od.txt";
+        System.out.println(uriWithLink);
         DistributedCache.addCacheFile(new URI(uriWithLink), conf);
 
-        JobClient.runJob(conf);
+//        JobClient.runJob(conf);
     }
 } 
