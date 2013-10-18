@@ -1,4 +1,4 @@
-package rd;
+package kmeans.rd;
 
 import java.lang.String;
 import java.io.DataInput;

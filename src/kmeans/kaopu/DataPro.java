@@ -1,4 +1,4 @@
-package kaopu;
+package kmeans.kaopu;
 
 import java.io.DataInput;  
 import java.io.DataOutput;  

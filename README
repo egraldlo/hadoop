@@ -1,2 +1,4 @@
-摘自网络的hadoop代码
-UseDistributedCacheBySymbolicLink和DistributedCache.addCacheFile一般是结合起来用的
+摘自网络的hadoop代码以及自己实现的hadoop代码
+casa:UseDistributedCacheBySymbolicLink和DistributedCache.addCacheFile一般是结合起来用的
+hdfs:是hdfs的接口使用
+kmeans:为数据挖掘十大算法中的kmeans算法

@@ -1,4 +1,4 @@
-package dm;
+package kmeans.dm;
 
 import java.io.DataInput;
 import java.io.DataOutput;

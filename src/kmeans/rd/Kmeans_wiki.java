@@ -1,4 +1,4 @@
-package rd;
+package kmeans.rd;
 
 public class Kmeans_wiki {
 

@@ -1,4 +1,4 @@
-package dm;
+package kmeans.dm;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
