@@ -37,9 +37,9 @@ public class KmeansDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {  
         // TODO Auto-generated method stub  
         Configuration conf=new Configuration();  
-          
+        
         // set the centers data file  
-        Path centersFile=new Path("hdfs://fansyPC:9000/user/fansy/input/centers");  
+        Path centersFile=new Path("hdfs://58.198.176.115:9000/home/casa/input/kmeans/centers");  
         DistributedCache.addCacheFile(centersFile.toUri(), conf);  
           
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();  
@@ -48,17 +48,25 @@ public class KmeansDriver {
           System.exit(2);  
         }  
         Job job = new Job(conf, "kmeans job 0");  
+        
         job.setJarByClass(KmeansDriver.class);  
-        job.setMapperClass(KmeansM.class);  
+
         job.setMapOutputKeyClass(IntWritable.class);  
         job.setMapOutputValueClass(DataPro.class);  
+        
         job.setNumReduceTasks(1);  
+        
+        job.setMapperClass(KmeansM.class);  
         job.setCombinerClass(KmeansC.class);  
         job.setReducerClass(KmeansR.class);  
+        
+        
         job.setOutputKeyClass(NullWritable.class);  
         job.setOutputValueClass(Text.class);      
+        
         FileInputFormat.addInputPath(job, new Path(dataPath));  
         FileOutputFormat.setOutputPath(job, new Path(temp_path+0+"/"));    
+        
         if(!job.waitForCompletion(true)){  
             System.exit(1); // run error then exit  
         }  
